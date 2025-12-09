@@ -134,7 +134,7 @@ export async function scrapeContent(url) {
   console.log(`\n🔍 Scraping content from: ${url}`);
   
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 

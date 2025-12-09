@@ -81,14 +81,14 @@ export async function linkScraper() {
   }
 
   // Create a map of existing URLs
-  const existingUrlMap = new Map(existingLinks.map(l => [l.link, l]));
+  const existingUrlMap = new Map(existingLinks.map(l => [l.url, l]));
 
   // Add new links with isUsed: 0
   let newCount = 0;
   normalizedLinks.forEach(url => {
     if (!existingUrlMap.has(url)) {
       existingLinks.push({
-        link: url,
+        url: url,
         isUsed: 0,
         addedAt: new Date().toISOString()
       });

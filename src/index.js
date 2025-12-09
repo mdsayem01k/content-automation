@@ -1,12 +1,11 @@
 import dotenv from 'dotenv';
 import { startScheduler } from './scheduler/cronScheduler.js';
-import { linkScraper } from './scrapers/linkScraper.js';
 import fs from 'fs';
 
 dotenv.config();
 
 console.log('🚀 Quora to Facebook Automation Starting...');
-linkScraper();
+
 // Initialize links.json if it doesn't exist
 if (!fs.existsSync('links.json')) {
   console.log('⚠️  links.json not found. Creating empty file...');
